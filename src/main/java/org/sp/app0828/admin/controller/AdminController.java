@@ -14,8 +14,8 @@ public class AdminController {
 	public ModelAndView getMain() {
 		//3단계:
 		
-		//4단계:
 		ModelAndView mav = new ModelAndView();
+		//4단계:
 		mav.setViewName("admin/index");
 		
 		return mav;

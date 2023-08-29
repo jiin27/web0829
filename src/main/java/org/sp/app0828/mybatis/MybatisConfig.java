@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 //설계분야에서의 분류가 아닌 경우 즉, 개발자가 정한 임의의 객체인 경우 그냥 컴포넌트라고 선언
 public class MybatisConfig {
 	private static MybatisConfig instance;
-	SqlSessionFactory factory; //SqlSession을 여럿 가지고 있는 pool
+	SqlSessionFactory factory; //SqlSession
 	
 	private MybatisConfig() {
 		String resource = "org/sp/app0828/mybatis/config.xml";

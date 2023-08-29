@@ -42,6 +42,7 @@ public class LoginController {
 		//3단계: 로직객체에 일 시킨다
 		System.out.println("로그인 요청함");
 		Admin obj=adminDAO.login(admin); //로그인 검증처리
+		
 		ModelAndView mav = new ModelAndView();
 		
 		//obj 가 null이면 로그인 정보가 실패
@@ -55,6 +56,6 @@ public class LoginController {
 			mav.setViewName("admin/index"); //성공하면 관리자 메인페이지
 		}
 		
-		return null;
+		return mav;
 	}
 }
