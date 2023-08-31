@@ -2,6 +2,7 @@ package org.sp.app0828.admin.controller;
 
 import java.util.List;
 
+import org.sp.app0828.domain.Product;
 import org.sp.app0828.model.product.TopCategoryDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,5 +32,17 @@ public class ProductController {
 		return mav; //접두어, 접미어 떼고 view의 이름(클라이언트가 보게 될 결과값) 입력. '/' 생략
 		
 		//* ModelAndView에 저장할 데이터가 없을 경우에는 view의 이름만 넘겨주면 되므로, 이때는 String 형만 반환 가능
+	}
+	
+	//상품 등록 요청 처리
+	@RequestMapping(value="/admin/product/regist", method=RequestMethod.POST)
+	public ModelAndView regist(Product product) {
+		System.out.println("하위 카테고리 idx "+product.getSubCategory().getSubcategory_idx());
+		System.out.println("상품명은 "+product.getProduct_name());
+		System.out.println("브랜드는 "+product.getBrand());
+		System.out.println("가격은 "+product.getPrice());
+		System.out.println("상세 설명은 "+product.getDetail());
+		
+		return null;
 	}
 }

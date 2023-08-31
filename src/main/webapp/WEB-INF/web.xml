@@ -13,6 +13,21 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<!-- 클라이언트가 요청시 서블릿보다도 먼저 수행되는 필터를 이용하여 한글 인코딩 처리하기 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<url-pattern>/*</url-pattern>
+		<filter-name>encodingFilter</filter-name>
+	</filter-mapping>
 
 	<!-- Processes application requests -->
 	<servlet>
